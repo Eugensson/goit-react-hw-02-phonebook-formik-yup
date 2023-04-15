@@ -25,14 +25,13 @@ class App extends React.Component {
   };
 
   onAddContact = values => {
-    console.log(values);
     const { contacts } = this.state;
     const { name, number } = values;
     if (name.trim() !== '' && number.trim() !== '') {
       const newContact = {
         id: nanoid(),
-        name: name,
-        number: number,
+        name,
+        number,
       };
 
       const isContactExist = contacts.find(

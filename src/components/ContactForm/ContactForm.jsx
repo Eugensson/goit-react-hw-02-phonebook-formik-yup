@@ -23,9 +23,9 @@ const schema = yup.object().shape({
 const ContactForm = () => {
   const handleSubmit = (values, { resetForm }) => {
     console.log(values);
-
     resetForm();
   };
+
   return (
     <Formik
       initialValues={initialValues}
