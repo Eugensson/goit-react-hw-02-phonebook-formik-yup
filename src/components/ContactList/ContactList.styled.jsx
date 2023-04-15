@@ -25,4 +25,5 @@ export const ContactsList = styled.ul`
 export const ContactNotification = styled.p`
   margin: 0;
   padding: 0;
+  font-size: 10px;
 `;

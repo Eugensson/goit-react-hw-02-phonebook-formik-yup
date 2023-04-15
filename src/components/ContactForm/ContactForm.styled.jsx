@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
+import { Form } from 'formik';
 
-export const Form = styled.form`
+export const FormContainer = styled(Form)`
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -29,4 +30,10 @@ export const FormBtn = styled.button`
     background-color: #000;
     color: #fff;
   }
+`;
+
+export const ErrMsg = styled.div`
+  color: red;
+  font-size: 10px;
+  font-weight: 500;
 `;
