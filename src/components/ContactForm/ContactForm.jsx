@@ -4,25 +4,26 @@ import PropTypes from 'prop-types';
 
 import { FormContainer, Label, FormBtn, ErrMsg } from './ContactForm.styled';
 
-const initialValues = {
-  name: '',
-  number: '',
-};
-
-const schema = yup.object().shape({
-  name: yup.string().required('*Name is a required field'),
-  number: yup
-    .string()
-    .matches(
-      /^\+38-\d{3}-\d{3}-\d{2}-\d{2}$/,
-      '*Incorrect format. Insert +38-000-000-00-00'
-    )
-    .required('*Phone number is a required field'),
-});
-
 const ContactForm = () => {
+  const initialValues = {
+    name: '',
+    number: '',
+  };
+
+  const schema = yup.object().shape({
+    name: yup.string().required('*Name is a required field'),
+    number: yup
+      .string()
+      .matches(
+        /^\+38-\d{3}-\d{3}-\d{2}-\d{2}$/,
+        '*Incorrect format. Insert +38-000-000-00-00'
+      )
+      .required('*Phone number is a required field'),
+  });
+
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
+    console.log('values in component', values);
+    this.props.onSubmit(values);
     resetForm();
   };
 
