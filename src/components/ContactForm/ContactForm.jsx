@@ -23,7 +23,7 @@ const ContactForm = () => {
 
   const handleSubmit = (values, { resetForm }) => {
     console.log('values in component', values);
-    this.props.onSubmit(values);
+    // this.props.onSubmit(values);
     resetForm();
   };
 
