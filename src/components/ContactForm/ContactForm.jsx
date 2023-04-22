@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import { FormContainer, Label, FormBtn, ErrMsg } from './ContactForm.styled';
 
-const ContactForm = () => {
+const ContactForm = props => {
   const initialValues = {
     name: '',
     number: '',
@@ -24,7 +24,7 @@ const ContactForm = () => {
   const handleSubmit = (values, { resetForm }) => {
     console.log('values in component', values);
     resetForm();
-    // this.props.onSubmit(values);
+    props.onSubmit(values);
   };
 
   return (
